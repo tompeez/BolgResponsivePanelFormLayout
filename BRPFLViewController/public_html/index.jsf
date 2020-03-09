@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Header -->
+                        <af:outputText value="Responsive af:panelFormLayout" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="50%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:selectOneChoice label="Layout:" id="soc1" value="#{viewScope.ResponsiveFormBean.layout}"
+                                            autoSubmit="true">
+                            <af:selectItem label="WEIGHTED" value="WEIGHTED" id="si1"/>
+                            <af:selectItem label="FIXED" value="FIXED" id="si2"/>
+                            <af:selectItem label="RESPONSIVE" value="RESPONSIVE" id="si3"/>
+                            <af:selectItem label="weighted" value="weighted" id="si4"/>
+                            <af:selectItem label="fixed" value="fixed" id="si5"/>
+                            <af:selectItem label="responsive" value="responsive" id="si6"/>
+                        </af:selectOneChoice>
+                        <af:button text="button 1" id="b2"/>
+                        <af:panelFormLayout id="pfl1" layout="#{viewScope.ResponsiveFormBean.layout}"
+                                            partialTriggers="soc1" rows="2" maxColumns="2">
+                            <af:inputText label="Label 1" id="it1"/>
+                            <af:inputText label="Label 2" id="it2"/>
+                            <af:inputText label="Label 3" id="it3"/>
+                            <af:inputText label="Label 4" id="it4"/>
+                            <af:inputText label="Label 5" id="it5"/>
+                            <af:inputText label="Label 6" id="it6"/>
+                            <f:facet name="footer"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="50%" id="gr3">
+                    <af:gridCell id="gc3">
+                        <af:panelFormLayout id="pfl2" rows="2" maxColumns="2">
+                            <af:inputText label="Label 7" id="it7"/>
+                            <af:inputText label="Label 8" id="it8"/>
+                            <af:inputText label="Label 9" id="it9"/>
+                            <af:inputText label="Label 10" id="it10"/>
+                            <af:inputText label="Label 11" id="it11"/>
+                            <af:inputText label="Label 12" id="it12"/>
+                            <f:facet name="footer"/>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
